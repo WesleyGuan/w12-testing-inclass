@@ -6,15 +6,22 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/bowling",
         "index": "apps/bowling/src/index.html",
         "main": "apps/bowling/src/main.ts",
         "polyfills": "apps/bowling/src/polyfills.ts",
         "tsConfig": "apps/bowling/tsconfig.app.json",
-        "assets": ["apps/bowling/src/favicon.ico", "apps/bowling/src/assets"],
-        "styles": ["apps/bowling/src/styles.css"],
+        "assets": [
+          "apps/bowling/src/favicon.ico",
+          "apps/bowling/src/assets"
+        ],
+        "styles": [
+          "apps/bowling/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -71,15 +78,23 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/bowling/**/*.ts", "apps/bowling/**/*.html"]
+        "lintFilePatterns": [
+          "apps/bowling/**/*.ts",
+          "apps/bowling/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/bowling"],
+      "outputs": [
+        "coverage/apps/bowling"
+      ],
       "options": {
         "jestConfig": "apps/bowling/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "coverage": true,
+        "outputFile": "result.json",
+        "json": true
       }
     }
   },
